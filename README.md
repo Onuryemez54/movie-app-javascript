@@ -24,4 +24,4 @@ The user can delete the comments at any time.
 
 - HTML
 - CSS
-  -JavaScript
+- JavaScript
