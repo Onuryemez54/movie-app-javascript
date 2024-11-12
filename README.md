@@ -14,7 +14,7 @@ The comments entered in the form are stored separately for each movie with a uni
 The comments entered are stored in localStorage and are not deleted from the screen even if the page is refreshed.
 The user can delete the comments at any time.
 
-##Features
+## Features
 
 -Search for movies
 -Add a new comment
