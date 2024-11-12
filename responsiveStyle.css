@@ -1,0 +1,173 @@
+/* Large devices */
+
+@media (min-width: 1200px) {
+  .detail-container .detail-div {
+    grid-template-rows: 300px 700px 600px 1fr;
+    grid-template-areas:
+      "head head"
+      "poster info"
+      "video video"
+      "comment comment";
+  }
+  .detail-div .video-container {
+    gap: 2rem;
+  }
+  .video-container .video {
+    height: 500px;
+  }
+}
+
+/* Laptop */
+@media (max-width: 1200px) {
+  .detail-div .video-container {
+    margin-top: 4rem;
+  }
+  .video-container .video {
+    width: 40vw;
+    height: 350px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  header {
+    height: 50vh;
+  }
+
+  .slice-container .img-title {
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.8rem;
+  }
+  .slice-container .img-btn {
+    font-size: 0.7rem;
+    top: 3rem;
+    right: 1rem;
+    padding: 0.4rem;
+  }
+
+  .search {
+    width: 70vw;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    width: 3rem;
+    font-size: 0.9rem;
+  }
+
+  .movie {
+    width: 45vw;
+  }
+
+  .movie-info {
+    font-size: 0.9rem;
+  }
+
+  .detail-container .detail-div {
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 400px 500px 500px 500px 1fr;
+    grid-template-areas:
+      "head"
+      "poster"
+      "info"
+      "video"
+      "video"
+      "comment";
+  }
+
+  .detail-div .detail-img {
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .detail-div .info-container {
+    font-size: 0.9rem;
+    left: 1rem;
+  }
+  .detail-div .detail-vote {
+    left: 3rem;
+  }
+  .cast-div .acting-img {
+    width: 90px;
+    height: 150px;
+  }
+
+  .detail-div .video-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    /* margin: 2.5rem auto; */
+  }
+
+  .video-container .video {
+    width: 70vw;
+    height: 350px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  header {
+    height: 40vh;
+  }
+
+  .slice-container .img-title,
+  .slice-container .img-btn {
+    font-size: 0.7rem;
+    right: 1rem;
+  }
+
+  .search {
+    width: 80vw;
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    width: 2.5rem;
+    font-size: 0.8rem;
+  }
+
+  .movie {
+    width: 90vw;
+  }
+
+  .movie-info {
+    font-size: 0.8rem;
+  }
+
+  .detail-div .info-container {
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .detail-div .detail-img {
+    width: 80%;
+    left: 0.6rem;
+  }
+
+  .detail-div .detail-vote {
+    left: 1rem;
+  }
+  .info-container .cast-container {
+    gap: 0.2px;
+    justify-content: center;
+  }
+
+  .cast-div .acting-img {
+    width: 60px;
+    height: 100px;
+  }
+
+  .video-container .video {
+    width: 80vw;
+    height: 150px;
+  }
+
+  .comment-section,
+  .form-section {
+    width: 95%;
+  }
+}
