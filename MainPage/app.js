@@ -58,7 +58,7 @@ function showMovies(movies) {
   }
   changeSliceImage();
 
-  //main-videos-section
+  //main-movies-section
 
   movies.map((movie) => {
     const { title, poster_path, vote_average, overview, id, backdrop_path } =
