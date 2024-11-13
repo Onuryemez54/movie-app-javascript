@@ -26,6 +26,10 @@
     width: 40vw;
     height: 350px;
   }
+  .cast-div .acting-img {
+    width: 90px;
+    height: 150px;
+  }
 }
 
 /* Tablet */
