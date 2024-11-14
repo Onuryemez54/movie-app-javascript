@@ -1,6 +1,6 @@
 # Movie App With JavaScript
 
-Movie App is a JavaScript-based web application. It allows users to discover movies they want to review. Users can search in the search section ,can add movies to their favorites list ,can add comments to movies
+Movie App is a JavaScript-based web application. It allows users to discover movies they want to review. Users can search in the search section ,can add movies to their favorites list ,can add comments to movies,can list by categories
 
 ## Introduction
 
@@ -12,12 +12,14 @@ There is detailed information and trailers about the movie on the detail page.
 There is a form where you can add comments.
 The comments entered in the form are stored separately for each movie with a unique id.
 The comments entered are stored in localStorage and are not deleted from the screen even if the page is refreshed.
-The user can delete the comments at any time.
-The user can add any movie he wants to his favorite list. He can remove it from his favorite list. Favorite lists are also stored in localStorage
+User can delete the comments at any time.
+User can add any movie he wants to his favorite list. User can remove it from his favorite list. Favorite lists are also stored in localStorage
+When User open the category tab on the home page and click, user can list the movies in the desired category.
 
 ## Features
 
 -Search for movies
+-List by categories
 -Add a new comment
 -Add movies to favorites
 -Responsive design experience
