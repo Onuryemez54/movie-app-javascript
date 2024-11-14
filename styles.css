@@ -151,6 +151,23 @@ button i {
   background-color: var(--secondary-color);
   box-shadow: 0 1px 7px var(--info-color);
 }
+.button-container .fav-btn {
+  text-decoration: none;
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 2rem;
+  color: var(--white--color);
+  background-color: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease-in, box-shadow 0.3s ease-in;
+  opacity: 0.9;
+}
+.button-container .fav-btn:hover {
+  color: var(--failed-color);
+  box-shadow: 0 1px 20px var(--white--color);
+}
 
 main {
   display: flex;
@@ -168,6 +185,10 @@ main {
   cursor: pointer;
   color: var(--secondary-color);
   text-decoration: none;
+  transition: box-shadow 0.3s ease-in;
+}
+.movie:hover {
+  box-shadow: 0 1px 30px var(--info-color);
 }
 .movie img {
   width: 100%;
@@ -261,6 +282,17 @@ main {
   color: var(--white--color);
   opacity: 0.7;
   text-align: center;
+}
+
+.info-container .fav-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.info-container .fav-icon.selected {
+  color: var(--failed-color);
+  transform: scale(1.2);
 }
 
 .info-container .detail-overview {
@@ -571,4 +603,52 @@ main {
 }
 .form-section-container .alert--info {
   color: var(--info-color);
+}
+
+/* favorite--section */
+
+.fav-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--white--color);
+  text-align: center;
+}
+.fav-section h2 {
+  margin-top: 4rem;
+}
+.fav-section .header-img {
+  height: 50vh;
+  background-image: url("./FavoritePage/fav-image.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 1px 10px var(--info-color);
+}
+.fav-section .favorite-movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.favorite-movies .fav-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fav-div .fav-movie {
+  height: 100%;
+}
+
+.fav-div .remove-icon {
+  color: var(--white--color);
+  font-size: 1.2rem;
+  transition: color 0.3s ease-in, transform 0.3s ease-in;
+  cursor: pointer;
+}
+
+.fav-div .remove-icon:hover {
+  transform: rotate(60deg);
+  color: var(--warning-color);
 }

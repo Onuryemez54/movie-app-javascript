@@ -170,11 +170,8 @@ function addCommentToLocal(name, comment, rating, time) {
 function deleteCommentToLocal(userName, userComment) {
   let comments = getCommentsFromStorage();
 
-  comments.forEach((comment, index) => {
-    if (comment.name === userName && comment.comment === userComment) {
-      comments.splice(index, 1);
-    }
-  });
+  comments = comments.filter((comment) => comment.name !== userName);
+
   localStorage.setItem(commentsKey, JSON.stringify(comments));
 }
 

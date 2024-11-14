@@ -13,6 +13,7 @@ function showMovieDetail(movie) {
     release_date,
     vote_average,
     poster_path,
+    id,
   } = movie;
 
   const headerImg = document.createElement("div");
@@ -67,6 +68,41 @@ function showMovieDetail(movie) {
   detailDiv.appendChild(headerImg);
   detailDiv.appendChild(detailImg);
   detailDiv.appendChild(infoContainer);
+
+  //favorite-section
+  const favIcon = document.createElement("i");
+  favIcon.classList.add("fa-solid", "fa-heart", "fav-icon");
+  infoContainer.insertBefore(favIcon, detailTitle);
+
+  favIcon.addEventListener("click", () => {
+    favIcon.classList.toggle("selected");
+
+    if (favIcon.classList.contains("selected")) {
+      const favMovie = {
+        favTitle: title,
+        favPoster: poster_path,
+        favBackDrop: backdrop_path,
+        favVoteAverage: vote_average,
+        favId: id,
+      };
+
+      let favorites = JSON.parse(localStorage.getItem("favs")) || [];
+      favorites = [...favorites, favMovie];
+      localStorage.setItem("favs", JSON.stringify(favorites));
+    } else {
+      let favorites = JSON.parse(localStorage.getItem("favs")) || [];
+      favorites = favorites.filter((favItem) => favItem.favTitle !== title);
+      localStorage.setItem("favs", JSON.stringify(favorites));
+    }
+  });
+
+  //Integrating favIcon color into every detail page
+  const favorites = JSON.parse(localStorage.getItem("favs")) || [];
+  const isFavorited = favorites.some((movie) => movie.favTitle === title);
+
+  if (isFavorited) {
+    favIcon.classList.add("selected");
+  }
 }
 
 //credits--section
