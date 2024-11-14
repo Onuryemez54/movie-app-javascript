@@ -24,3 +24,16 @@ const getMovies = async (url) => {
   }
 };
 getMovies(popularMoviesUrl(pageNumber));
+
+//genres-names-api-function
+const genresNamesUrl = `${baseUrl}genre/movie/list${apiKey}`;
+const getGenresNames = async (url) => {
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    showGenresNames(data.genres);
+  } catch (err) {
+    console.error("Fetch request canceled : ", err);
+  }
+};
+getGenresNames(genresNamesUrl);

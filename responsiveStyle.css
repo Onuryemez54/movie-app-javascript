@@ -49,7 +49,6 @@
     right: 1rem;
     padding: 0.4rem;
   }
-
   .search {
     width: 70vw;
     font-size: 0.9rem;
@@ -58,6 +57,9 @@
   .btn {
     width: 3rem;
     font-size: 0.9rem;
+  }
+  .button-container .mid-btn {
+    font-size: 0.8rem;
   }
 
   .movie {
@@ -132,6 +134,9 @@
   .btn {
     width: 2.5rem;
     font-size: 0.8rem;
+  }
+  .button-container .mid-btn {
+    font-size: 0.6rem;
   }
 
   .movie {

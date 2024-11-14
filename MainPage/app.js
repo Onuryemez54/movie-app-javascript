@@ -2,13 +2,13 @@ const form = document.getElementById("form");
 const searchText = document.getElementById("search");
 const main = document.getElementById("main");
 const headerSlice = document.getElementById("slice-container");
+const categoryBtn = document.getElementById("category-btn");
+const categories = document.getElementById("categories");
 
 function showMovies(movies) {
-  // console.log(movies);
   main.innerHTML = "";
 
   //slice-section
-
   const filteredMovies = movies.filter((movie) => movie.vote_average >= 7.5);
   // console.log(filteredMovies);
 
@@ -147,3 +147,34 @@ function decreasePageNumber() {
     getMovies(popularMoviesUrl(pageNumber));
   }
 }
+
+// Caterogy --section
+
+categoryBtn.addEventListener("click", () =>
+  categories.classList.toggle("checked")
+);
+
+function showGenresNames(genres) {
+  genres.map((genre) => {
+    const genreElement = document.createElement("li");
+    genreElement.textContent = genre.name;
+    categories.appendChild(genreElement);
+
+    genreElement.addEventListener("click", () => showCategoryMovies(genre.id));
+  });
+}
+
+function showCategoryMovies(id) {
+  const url = `${baseUrl}discover/movie${apiKey}&with_genres=${id}`;
+  getMovies(url);
+  categories.classList.toggle("checked");
+}
+
+//to show all movies
+const showAllMovies = document.getElementById("show-btn");
+showAllMovies.addEventListener("click", () => {
+  getMovies(popularMoviesUrl(1));
+  if (categories.classList.contains("checked")) {
+    categories.classList.toggle("checked");
+  }
+});
