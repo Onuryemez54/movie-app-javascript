@@ -147,7 +147,7 @@ header .slice-container {
   padding: 1rem;
   width: 150px;
   border-radius: 0 10px 10px 0;
-  animation: categoryMove 1s ease-in-out;
+  animation: categoryMove 0.5s ease-in-out;
   margin-top: 3rem;
   max-height: 80vh;
   overflow-y: auto;

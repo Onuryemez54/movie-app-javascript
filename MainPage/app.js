@@ -126,6 +126,8 @@ form.addEventListener("submit", (e) => {
 
 //button section
 
+let currentGenreId = null;
+
 const nextButton = document.getElementById("next");
 
 nextButton.addEventListener("click", increasePageNumber);
@@ -133,7 +135,10 @@ nextButton.addEventListener("click", increasePageNumber);
 function increasePageNumber() {
   if (pageNumber <= 20) {
     pageNumber++;
-    getMovies(popularMoviesUrl(pageNumber));
+    const url = currentGenreId
+      ? `${baseUrl}discover/movie${apiKey}&with_genres=${currentGenreId}&page=${pageNumber}`
+      : popularMoviesUrl(pageNumber);
+    getMovies(url);
   }
 }
 
@@ -144,7 +149,10 @@ previousButton.addEventListener("click", decreasePageNumber);
 function decreasePageNumber() {
   if (pageNumber >= 2) {
     pageNumber--;
-    getMovies(popularMoviesUrl(pageNumber));
+    const url = currentGenreId
+      ? `${baseUrl}discover/movie${apiKey}&with_genres=${currentGenreId}&page=${pageNumber}`
+      : popularMoviesUrl(pageNumber);
+    getMovies(url);
   }
 }
 
@@ -165,7 +173,9 @@ function showGenresNames(genres) {
 }
 
 function showCategoryMovies(id) {
-  const url = `${baseUrl}discover/movie${apiKey}&with_genres=${id}`;
+  currentGenreId = id;
+  pageNumber = 1;
+  const url = `${baseUrl}discover/movie${apiKey}&with_genres=${id}&page=${pageNumber}`;
   getMovies(url);
   categories.classList.toggle("checked");
 }
@@ -173,7 +183,9 @@ function showCategoryMovies(id) {
 //to show all movies
 const showAllMovies = document.getElementById("show-btn");
 showAllMovies.addEventListener("click", () => {
-  getMovies(popularMoviesUrl(1));
+  currentGenreId = null;
+  pageNumber = 1;
+  getMovies(popularMoviesUrl(pageNumber));
   if (categories.classList.contains("checked")) {
     categories.classList.toggle("checked");
   }
