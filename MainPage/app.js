@@ -59,8 +59,9 @@ function showMovies(movies) {
   changeSliceImage();
 
   //main-movies-section
+  const sortedMovies = movies.sort((a, b) => b.vote_average - a.vote_average);
 
-  movies.map((movie) => {
+  sortedMovies.map((movie) => {
     const { title, poster_path, vote_average, overview, id, backdrop_path } =
       movie;
 
