@@ -136,6 +136,10 @@ nextButton.addEventListener("click", increasePageNumber);
 function increasePageNumber() {
   if (pageNumber <= 20) {
     pageNumber++;
+
+    //saving pageNumber to sessionStorage
+    sessionStorage.setItem("pageNumber", pageNumber);
+
     const url = currentGenreId
       ? `${baseUrl}discover/movie${apiKey}&with_genres=${currentGenreId}&page=${pageNumber}`
       : popularMoviesUrl(pageNumber);
@@ -150,6 +154,10 @@ previousButton.addEventListener("click", decreasePageNumber);
 function decreasePageNumber() {
   if (pageNumber >= 2) {
     pageNumber--;
+
+    //saving pageNumber to sessionStorage
+    sessionStorage.setItem("pageNumber", pageNumber);
+
     const url = currentGenreId
       ? `${baseUrl}discover/movie${apiKey}&with_genres=${currentGenreId}&page=${pageNumber}`
       : popularMoviesUrl(pageNumber);
@@ -176,18 +184,51 @@ function showGenresNames(genres) {
 function showCategoryMovies(id) {
   currentGenreId = id;
   pageNumber = 1;
+
+  //saving to sessinStorage
+  sessionStorage.setItem("currentGenreId", currentGenreId);
+  sessionStorage.setItem("pageNumber", pageNumber);
+
   const url = `${baseUrl}discover/movie${apiKey}&with_genres=${id}&page=${pageNumber}`;
   getMovies(url);
   categories.classList.toggle("checked");
 }
 
 //to show all movies
-const showAllMovies = document.getElementById("show-btn");
-showAllMovies.addEventListener("click", () => {
+function resetDefaultState() {
   currentGenreId = null;
   pageNumber = 1;
+  sessionStorage.removeItem("currentGenreId");
+  sessionStorage.removeItem("pageNumber");
   getMovies(popularMoviesUrl(pageNumber));
+}
+
+const showAllMovies = document.getElementById("show-btn");
+showAllMovies.addEventListener("click", () => {
+  resetDefaultState();
   if (categories.classList.contains("checked")) {
     categories.classList.toggle("checked");
+  }
+});
+
+//updating every page
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedGenreId = sessionStorage.getItem("currentGenreId");
+  const savedPage = sessionStorage.getItem("pageNumber");
+
+  if (savedGenreId && savedPage) {
+    currentGenreId = savedGenreId;
+    pageNumber = parseInt(savedPage, 10);
+
+    const url = `${baseUrl}discover/movie${apiKey}&with_genres=${currentGenreId}&page=${pageNumber}`;
+    getMovies(url);
+  } else if (savedPage) {
+    pageNumber = parseInt(savedPage, 10);
+    getMovies(popularMoviesUrl(pageNumber));
+  } else {
+    pageNumber = 1;
+    currentGenreId = null;
+    getMovies(popularMoviesUrl(pageNumber));
   }
 });
