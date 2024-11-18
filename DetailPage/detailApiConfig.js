@@ -1,13 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get("movieId");
 
-// console.log("clicked ID:", movieId);
-
-const apiKey = "?api_key=e11ee625596a8cd6e3a752bbc3522281";
-const baseUrl = "https://api.themoviedb.org/3/";
-
-//  ----------  Api seciton -----------
-
 //movie-detail-api
 const detailUrl = `${baseUrl}movie/${movieId}${apiKey}`;
 

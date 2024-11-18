@@ -103,6 +103,14 @@ function showMovieDetail(movie) {
   if (isFavorited) {
     favIcon.classList.add("selected");
   }
+
+  //back-button-section
+  const backButton = document.createElement("i");
+  backButton.classList.add("back-btn", "fa-solid", "fa-left-long");
+  infoContainer.insertBefore(backButton, detailTitle);
+  backButton.addEventListener("click", () => {
+    window.history.back();
+  });
 }
 
 //credits--section

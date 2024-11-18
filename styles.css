@@ -39,7 +39,7 @@ html {
 
 header {
   width: 100%;
-  height: 80vh;
+  height: 40vh;
   position: relative;
   background-color: var(--primary-color);
   box-shadow: 0 1px 20px var(--white--color);
@@ -82,6 +82,7 @@ header .slice-container {
 .slice-container .slice-img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -401,6 +402,22 @@ main {
 .info-container .fav-icon.selected {
   color: var(--failed-color);
   transform: scale(1.2);
+}
+.back-btn {
+  position: absolute;
+  right: 2rem;
+  font-size: 1.7rem;
+  cursor: pointer;
+  transition: color 0.2s ease-in;
+}
+.back-btn:hover {
+  color: var(--warning-color);
+}
+.back-btn::after {
+  content: "Go Back";
+  position: absolute;
+  margin-left: 0.2rem;
+  font-size: 0.7rem;
 }
 
 .info-container .detail-overview {
@@ -722,11 +739,44 @@ main {
   color: var(--white--color);
   text-align: center;
 }
-.fav-section h2 {
-  margin-top: 4rem;
+.fav-section .fav-button-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 3rem 4rem 0.5rem;
 }
+
+.fav-button-container i,
+.fav-button-container a {
+  font-size: 1.7rem;
+  cursor: pointer;
+  transition: color 0.2s ease-in;
+  color: var(--info-color);
+}
+.fav-button-container a {
+  text-decoration: none;
+}
+.fav-button-container i:hover {
+  color: var(--warning-color);
+}
+.fav-button-container i::after {
+  content: "Go Back";
+  position: absolute;
+  margin-left: 0.2rem;
+  font-size: 0.7rem;
+}
+.fav-button-container a::after {
+  content: "Go Home";
+  position: absolute;
+  margin-left: 0.2rem;
+  font-size: 0.7rem;
+}
+.fav-button-container a:hover {
+  color: var(--failed-color);
+}
+
 .fav-section .header-img {
-  height: 50vh;
+  height: 30vh;
   background-image: url("./FavoritePage/fav-image.jpg");
   background-position: center;
   background-size: cover;
@@ -737,7 +787,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 3rem;
+  padding: 2rem;
 }
 
 .favorite-movies .fav-div {
@@ -748,7 +798,6 @@ main {
 .fav-div .fav-movie {
   height: 100%;
 }
-
 .fav-div .remove-icon {
   color: var(--white--color);
   font-size: 1.2rem;

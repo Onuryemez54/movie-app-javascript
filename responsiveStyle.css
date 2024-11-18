@@ -112,6 +112,10 @@
     width: 70vw;
     height: 350px;
   }
+  .info-container .back-btn {
+    position: absolute;
+    right: 5rem;
+  }
 }
 
 /* Mobile */

@@ -72,3 +72,9 @@ function deleteTheMovieFromFavorites(title) {
 }
 
 document.addEventListener("DOMContentLoaded", displayFavoriteMovies);
+
+//back-btn section
+const favBackBtn = document.getElementById("fav-back-btn");
+favBackBtn.addEventListener("click", () => {
+  window.history.back();
+});
