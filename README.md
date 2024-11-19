@@ -19,24 +19,25 @@ When User open the category tab on the home page and click, user can list the mo
 ## Features
 
 - 🎬 **Popular Movies**: View the list of most popular movies.
-  ![Popular Movies](./screenshots/main-page.png)
+  ![Popular Movies](./screenshots/popular-movies.png)
 
 - 🔍 **Search Movies**: Search any movie by title.
-  ![Search](./screenshots/search.png)
+  ![Search](./screenshots/search-movies.png)
 
 - 📜 **Movie Details**: Get detailed information about a selected movie.
-  ![Details](./screenshots/detail-page.png)
+  ![Details](./screenshots/movie-details.png)
 
 - 💹 **Movie Categories**: List movies in the selected category
-  ![Details](./screenshots/category.png)
+  ![Category](./screenshots/category.png)
 
 - ✍️**Add a new comment**: Add a comment below the movie you want.
-  ![Details](./screenshots/comment.png)
+  ![Comment](./screenshots/movie-comment.png)
 
 - ❤️**Add movies to favorites**: Add the movies you like to your favorites page.
-  ![Details](./screenshots/favorite-page.png)
+  ![Favorite](./screenshots/favorites.png)
 
-  -Responsive design experience
+- **Responsive design experience**
+  ![Responsive Design ](./screenshots/responsive.png)
 
 ## Technologies Used
 
