@@ -59,14 +59,15 @@ function showMovieDetail(movie) {
     genresEl.appendChild(genre);
   });
 
+  detailDiv.appendChild(headerImg);
+  detailDiv.appendChild(detailImg);
+
   infoContainer.appendChild(vote);
   infoContainer.appendChild(detailTitle);
   infoContainer.appendChild(detailOverview);
   infoContainer.appendChild(releaseDate);
   infoContainer.appendChild(genresEl);
 
-  detailDiv.appendChild(headerImg);
-  detailDiv.appendChild(detailImg);
   detailDiv.appendChild(infoContainer);
 
   //favorite-section

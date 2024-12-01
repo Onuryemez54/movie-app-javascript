@@ -132,10 +132,7 @@ function deleteToComment(e) {
   }
 
   deleteCommentToLocal(
-    e.target.nextElementSibling.nextElementSibling.firstElementChild
-      .textContent,
-    e.target.nextElementSibling.nextElementSibling.nextElementSibling
-      .textContent
+    e.target.nextElementSibling.nextElementSibling.firstElementChild.textContent
   );
 }
 
@@ -167,7 +164,7 @@ function addCommentToLocal(name, comment, rating, time) {
 
 //delete comment to local
 
-function deleteCommentToLocal(userName, userComment) {
+function deleteCommentToLocal(userName) {
   let comments = getCommentsFromStorage();
 
   comments = comments.filter((comment) => comment.name !== userName);

@@ -44,17 +44,14 @@ function showMovies(movies) {
   // console.log(images);
 
   let index = 0;
-  let timer = setInterval(changeSliceImage, 10000);
+  setInterval(changeSliceImage, 10000);
 
   function changeSliceImage() {
-    clearInterval(timer);
-
     index = (index + 1) % images.length;
 
     images.forEach((img) => img.classList.remove("active"));
 
     images[index].classList.add("active");
-    timer = setInterval(changeSliceImage, 10000);
   }
   changeSliceImage();
 

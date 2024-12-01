@@ -8,6 +8,9 @@ if (movieId) {
   const getMovieDetail = async (url) => {
     try {
       const res = await fetch(url);
+      if (!res.ok) {
+        throw new Error(`HTTP Error! Status: ${res.status}`);
+      }
       const result = await res.json();
       showMovieDetail(result);
     } catch (error) {
@@ -24,6 +27,9 @@ if (movieId) {
   async function getMovieVideo(url) {
     try {
       const res = await fetch(url);
+      if (!res.ok) {
+        throw new Error(`HTTP Error! Status: ${res.status}`);
+      }
       const result = await res.json();
       showMovieVideos(result.results);
     } catch (error) {
@@ -42,6 +48,9 @@ if (movieId) {
   async function getMovieCredits(url) {
     try {
       const res = await fetch(url);
+      if (!res.ok) {
+        throw new Error(`HTTP Error! Status: ${res.status}`);
+      }
       const result = await res.json();
       showMovieCredits(result);
     } catch (error) {
